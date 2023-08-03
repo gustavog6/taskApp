@@ -1,0 +1,20 @@
+<section class="flex justify-center items-center h-screen w-screen shadow-md">
+  <div class="bg-sky-500 w-4/5 h-4/5 my-5 rounded-md p-10 space-y-5">
+    <p class="text-3xl font-bold text-center">Task app - Made by SANGUXXI</p>
+    <div class="space-x-2 h-3/4 overflow-y-scroll no-scrollbar">
+      <a *ngFor="let task of tasks">
+        <app-task
+          [title]="task.title"
+          [rLink]="task.id"
+          [status]="task.status"
+        ></app-task>
+      </a>
+    </div>
+    <a
+      class="absolute bottom-28 right-48 bg-yellow-600 py-4 px-2 rounded-full"
+      [routerLink]="'/tasks/new'"
+    >
+      <button>New</button>
+    </a>
+  </div>
+</section>

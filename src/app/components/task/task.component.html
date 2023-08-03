@@ -1,0 +1,27 @@
+<div
+  class="flex flex-row rounded-md bg-gray-500 p-3"
+  [ngClass]="{
+    'border-4 border-dashed border-yellow-500': status === 'in progress'
+  }"
+>
+  <button class="rounded-md bg-green-500 p-1" (click)="markDone(rLink)">
+    Done
+  </button>
+  <a
+    routerLink="/task/{{ rLink }}"
+    class="relative left-3 grow"
+    [ngClass]="{ 'line-through': status === 'done' }"
+    >{{ title }}</a
+  >
+  <div class="flex space-x-2">
+    <button
+      class="rounded-md bg-yellow-500 p-1"
+      (click)="markInprogress(rLink)"
+    >
+      In process
+    </button>
+    <button class="rounded-md bg-red-500 p-1" (click)="deleteTask(rLink)">
+      Delete
+    </button>
+  </div>
+</div>
