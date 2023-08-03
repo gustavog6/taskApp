@@ -1,6 +1,10 @@
-<section class="flex justify-center items-center h-screen w-screen shadow-md">
-  <div class="bg-sky-500 w-4/5 h-4/5 my-5 rounded-md p-10 space-y-5">
-    <p class="text-3xl font-bold text-center">Task app - Made by SANGUXXI</p>
+<section class="flex justify-center items-center h-screen w-screen">
+  <div
+    class="bg-emerald-400 w-4/5 h-4/5 my-5 rounded-md p-10 space-y-5 shadow-xl"
+  >
+    <p class="text-3xl font-bold text-center">
+      Task app - Made by Gustavo Adolfo
+    </p>
     <div class="space-x-2 h-3/4 overflow-y-scroll no-scrollbar">
       <a *ngFor="let task of tasks">
         <app-task
@@ -11,7 +15,7 @@
       </a>
     </div>
     <a
-      class="absolute bottom-28 right-48 bg-yellow-600 py-4 px-2 rounded-full"
+      class="absolute bottom-28 right-48 bg-teal-400 py-3 px-2 rounded-full shadow-xl border-2 border-stone-900 font-semibold"
       [routerLink]="'/tasks/new'"
     >
       <button>New</button>

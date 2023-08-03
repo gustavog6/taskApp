@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Task } from '../../models/model';
 import { TasksServiceService } from 'src/app/services/tasks-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-task',
@@ -12,7 +13,10 @@ export class NewTaskComponent implements OnInit {
 
   newTask!: FormGroup;
 
-  constructor(private taskService: TasksServiceService) {}
+  constructor(
+    private taskService: TasksServiceService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
     this.newTask = new FormGroup({
@@ -32,5 +36,7 @@ export class NewTaskComponent implements OnInit {
       status: this.newTask.controls['newStatus'].value,
     };
     this.taskService.addTask(newTask);
+
+    this.route.navigateByUrl('/tasks');
   }
 }
