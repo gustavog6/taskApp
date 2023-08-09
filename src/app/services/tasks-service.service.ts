@@ -23,6 +23,8 @@ export class TasksServiceService {
   }
 
   addTask(task: Task) {
+    if (!this.tasks) this.tasks = [];
+
     this.tasks.push(task);
     this.saveLocalstorage();
   }
